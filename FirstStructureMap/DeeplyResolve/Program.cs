@@ -1,9 +1,9 @@
-﻿using System;
+﻿using StructureMap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Unity;
 
 namespace DeeplyResolve
 {
@@ -46,17 +46,15 @@ namespace DeeplyResolve
     {
         static void Main(string[] args)
         {
-            IUnityContainer container = new UnityContainer();
+            IContainer container = new Container();
 
-            container.RegisterType<IMessage, FileMessage>();
-            container.RegisterType<ILog, Log>();
+            container.Configure(config =>
+            {
+                config.For<IMessage>().Use<FileMessage>();
+                config.For<ILog>().Use<Log>();
+            });
 
-            IMessage message = container.Resolve<IMessage>();
-
-            message.Write("Hi Vulcan");
-
-            Console.WriteLine("Press any key for continuing...");
-            Console.ReadKey();
+            IMessage message = container.GetInstance<IMessage>();
 
             message.Write("Hi Vulcan");
 
