@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Unity;
 
 namespace DeeplyResolve
 {
@@ -46,12 +46,12 @@ namespace DeeplyResolve
     {
         static void Main(string[] args)
         {
-            IUnityContainer container = new UnityContainer();
+            IKernel kernel = new StandardKernel();
 
-            container.RegisterType<IMessage, FileMessage>();
-            container.RegisterType<ILog, Log>();
+            kernel.Bind<IMessage>().To<FileMessage>();
+            kernel.Bind<ILog>().To<Log>();
 
-            IMessage message = container.Resolve<IMessage>();
+            IMessage message = kernel.Get<IMessage>();
 
             message.Write("Hi Vulcan");
 
