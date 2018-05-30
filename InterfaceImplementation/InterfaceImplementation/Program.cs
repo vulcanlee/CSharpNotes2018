@@ -1,41 +1,48 @@
 ﻿using System;
 
-namespace ConcreteClass
+namespace InterfaceImplementation
 {
-    public class Polygon
+    public interface IPolygon
+    {
+        int Side { get; set; }
+        double Length { get; set; }
+        double GetPerimeter();
+        double GetArea();
+    }
+    public class Polygon3 : IPolygon
     {
         public int Side { get; set; }
         public double Length { get; set; }
-        public Polygon(int side, double length)
+        public Polygon3(double length)
         {
-            Side = side;
+            Side = 3;
             Length = length;
         }
         public double GetPerimeter()
         {
             return Side * Length;
         }
-        public virtual double GetArea()
-        {
-            throw new NotImplementedException();
-        }
-    }
-    public class Polygon3 : Polygon
-    {
-        public Polygon3(double length) : base(3, length)
-        { }
-        public override double GetArea()
+        public double GetArea()
         {
             return Length * Length * Math.Sqrt(3) / 4;
         }
     }
-    public class Polygon4 : Polygon
+    public class Polygon4 : IPolygon
     {
-        public Polygon4(double length) : base(3, length)
-        { }
-        public override double GetArea()
+        public int Side { get; set; }
+        public double Length { get; set; }
+        public Polygon4(double length)
         {
-            return Length * Length ;
+            Side = 4;
+            Length = length;
+        }
+        public double GetPerimeter()
+        {
+            return Side * Length;
+        }
+        public double GetArea()
+        {
+            return Length * Length * Math.Sqrt(3) / 4;
         }
     }
     class Program

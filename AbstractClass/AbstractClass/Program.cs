@@ -43,9 +43,11 @@ namespace AbstractClass
             var fooSide3 = new Polygon3(8);
             Console.WriteLine($"正 {fooSide3.Side} 多邊形之週長為 {fooSide3.GetPerimeter()}");
             Console.WriteLine($"正 {fooSide3.Side} 多邊形之面積為 {fooSide3.GetArea()}");
+
             var fooSide4 = new Polygon4(8);
             Console.WriteLine($"正 {fooSide4.Side} 多邊形之週長為 {fooSide4.GetPerimeter()}");
             Console.WriteLine($"正 {fooSide4.Side} 多邊形之面積為 {fooSide4.GetArea()}");
+
             Console.WriteLine("Press any key for continuing...");
             Console.ReadKey();
         }
