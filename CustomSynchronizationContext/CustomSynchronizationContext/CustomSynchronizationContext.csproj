@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D7577A88-2647-4820-971D-0E98E1301962}</ProjectGuid>
+    <ProjectGuid>{4C675F6E-B121-4879-940B-390BF0CFD1C7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CustomSynchronisationContext</RootNamespace>
-    <AssemblyName>CustomSynchronisationContext</AssemblyName>
+    <RootNamespace>CustomSynchronizationContext</RootNamespace>
+    <AssemblyName>CustomSynchronizationContext</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

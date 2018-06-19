@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomSynchronisationContext", "CustomSynchronisationContext\CustomSynchronisationContext.csproj", "{D7577A88-2647-4820-971D-0E98E1301962}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomSynchronizationContext", "CustomSynchronizationContext\CustomSynchronizationContext.csproj", "{4C675F6E-B121-4879-940B-390BF0CFD1C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D7577A88-2647-4820-971D-0E98E1301962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7577A88-2647-4820-971D-0E98E1301962}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7577A88-2647-4820-971D-0E98E1301962}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7577A88-2647-4820-971D-0E98E1301962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C675F6E-B121-4879-940B-390BF0CFD1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C675F6E-B121-4879-940B-390BF0CFD1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C675F6E-B121-4879-940B-390BF0CFD1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C675F6E-B121-4879-940B-390BF0CFD1C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7F6CBFA8-9115-4794-9FD6-5644E28860B4}
+		SolutionGuid = {56E89F96-0FD4-4063-B7B7-57B319E87703}
 	EndGlobalSection
 EndGlobal
