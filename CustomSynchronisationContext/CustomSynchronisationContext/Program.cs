@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomSynchronisationContext
 {
-    class MySynchronisationContext : SynchronizationContext
+    class MySynchronizationContext : SynchronizationContext
     {
         /// <summary>
         /// 待執行的訊息工作佇列
@@ -109,13 +109,17 @@ namespace CustomSynchronisationContext
 
     class Program
     {
-        static MySynchronisationContext ctx = new MySynchronisationContext();
+        static MySynchronizationContext ctx = new MySynchronizationContext();
         static void Main(string[] args)
         {
             Console.Out.WriteLine("Main Thread No {0}", Thread.CurrentThread.ManagedThreadId);
 
+            Console.WriteLine($"設定自製 SynchronizationContext 之前的 SynchronizationContext.Current : {SynchronizationContext.Current?.ToString()}");
+
             // 設定我們自己設計的 同步處理的內容 synchronisation context
-            MySynchronisationContext.SetSynchronizationContext(ctx);
+            MySynchronizationContext.SetSynchronizationContext(ctx);
+
+            Console.WriteLine($"設定自製 SynchronizationContext 之後的 SynchronizationContext.Current : {SynchronizationContext.Current?.ToString()}");
 
             Thread workerThread = new Thread(new ThreadStart(Run));
             workerThread.Start();
