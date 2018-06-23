@@ -11,13 +11,22 @@ namespace OCP
     {
         private readonly ILogger _Logger;
 
-        public AppEvent(ILogger logger)
+        public AppEvent(string loggerType)
         {
-            this._Logger = logger;
+            this._Logger = LoggerFactory.CreateLogger(loggerType);
         }
         public void GenerateEvent(string message)
         {
             _Logger.Log(message);
+        }
+    }
+    public class LoggerFactory
+    {
+        public static ILogger CreateLogger(string loggerType)
+        {
+            if (loggerType == "Console") return new ConsoleLogger();
+            else if (loggerType == "File") return new FileLogger();
+            else throw new NotImplementedException();
         }
     }
     public interface ILogger
