@@ -8,15 +8,16 @@ namespace LSP
 {
     public class Rectangle
     {
-        public int Height { get; set; }
-        public int Width { get; set; }
+        public virtual int Height { get; set; }
+        public virtual int Width { get; set; }
+        public virtual int Area() => Width * Height;
     }
 
     public class Square : Rectangle
     {
         private int _height;
         private int _width;
-        public int Height
+        public override int Height
         {
             get
             {
@@ -27,7 +28,7 @@ namespace LSP
                 _height = value; _width = value;
             }
         }
-        public int Width
+        public override int Width
         {
             get
             {
@@ -38,6 +39,7 @@ namespace LSP
                 _width = value; _height = value;
             }
         }
+        public override int Area() => Width * Height;
     }
 
     public class LSPBehavior
@@ -45,10 +47,16 @@ namespace LSP
         public static void Method(Rectangle s)
         {
             s.Height = 8;
+            s.Width = 7;
+            if (s.Area() != 56)
+                throw new Exception("不正確的面積");
         }
     }
+
+
     class Program
     {
+
         static void Main(string[] args)
         {
             Square square = new Square();
@@ -59,8 +67,6 @@ namespace LSP
 
             Console.WriteLine("Press any key for continuing...");
             Console.ReadKey();
-
         }
-
     }
 }

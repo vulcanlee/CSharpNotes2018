@@ -8,15 +8,15 @@ namespace LSP
 {
     public class Rectangle
     {
-        public int Height { get; set; }
-        public int Width { get; set; }
+        public virtual int Height { get; set; }
+        public virtual int Width { get; set; }
     }
 
     public class Square : Rectangle
     {
         private int _height;
         private int _width;
-        public int Height
+        public override int Height
         {
             get
             {
@@ -27,7 +27,7 @@ namespace LSP
                 _height = value; _width = value;
             }
         }
-        public int Width
+        public override int Width
         {
             get
             {
@@ -47,8 +47,10 @@ namespace LSP
             s.Height = 8;
         }
     }
+
     class Program
     {
+
         static void Main(string[] args)
         {
             Square square = new Square();
@@ -59,8 +61,6 @@ namespace LSP
 
             Console.WriteLine("Press any key for continuing...");
             Console.ReadKey();
-
         }
-
     }
 }
