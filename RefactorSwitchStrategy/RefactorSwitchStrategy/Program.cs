@@ -118,7 +118,7 @@ namespace RefactorSwitchStrategy
             Console.WriteLine("Press any key for continuing...");
             Console.ReadKey();
 
-            Console.WriteLine("使用 資料字典與多型 來重構方法，進行 Swith 需求設計");
+            Console.WriteLine("使用 使用策略設計模式與簡易相依注入 來重構方法，進行 Swith 需求設計");
 
             RefactorSwitchStrategy.Refactoring.StringToColor fooRefactoring = new RefactorSwitchStrategy.Refactoring.StringToColor();
             Color fooRefactoringColor = fooRefactoring.Transfer(MyColorName);
