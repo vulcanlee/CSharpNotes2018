@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 
 namespace LSPViolation
 {
-    #region Example1
     class 鳥
     {
-        public virtual void fly() { Console.WriteLine("鳥在飛"); }
-        public virtual void eat() { Console.WriteLine("鳥在吃"); }
+        public virtual void 飛() { Console.WriteLine("鳥在飛"); }
+        public virtual void 吃() { Console.WriteLine("鳥在吃"); }
     }
     class 老鷹 : 鳥
     {
-        public override void fly() { Console.WriteLine("老鷹在飛"); }
-        public override void eat() { Console.WriteLine("老鷹在吃"); }
+        public override void 飛() { Console.WriteLine("老鷹在飛"); }
+        public override void 吃() { Console.WriteLine("老鷹在吃"); }
     }
     class 鴕鳥 : 鳥
     {
-        public override void fly() { throw new NotSupportedException("鴕鳥不能飛"); }
-        public override void eat() { Console.WriteLine("老鷹在吃"); }
+        public override void 飛() { throw new NotSupportedException("鴕鳥不能飛"); }
+        public override void 吃() { Console.WriteLine("老鷹在吃"); }
     }
-    #endregion
     class Program
     {
         static void Main(string[] args)
@@ -37,7 +35,7 @@ namespace LSPViolation
         {
             foreach (var item in birdList)
             {
-                item.fly();
+                item.飛();
             }
         }
     }
