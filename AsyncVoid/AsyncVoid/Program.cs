@@ -19,9 +19,10 @@ namespace AsyncVoid
             {
                 ThrowExcpetionAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // 這裡無法捕捉到例外異常
+                Console.WriteLine(ex.Message);
                 throw;
             }
         }
