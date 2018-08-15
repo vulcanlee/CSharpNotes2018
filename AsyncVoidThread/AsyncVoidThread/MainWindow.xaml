@@ -1,0 +1,67 @@
+﻿<Window x:Class="AsyncVoidThread.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsyncVoidThread"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1366">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="UIthread"
+                   HorizontalAlignment="Center"
+                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="Method1Log"
+                   TextWrapping="Wrap"
+                   Grid.Row="1" Grid.Column="0"/>
+        <Button x:Name="Method1Btn"
+                Grid.Row="2" Grid.Column="0"
+                Content="async void"
+                Click="Method1Btn_Click"
+                />
+        <TextBox x:Name="Method2Log"
+                   TextWrapping="Wrap"
+                   Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="Method2Btn"
+                Grid.Row="2" Grid.Column="1"
+                Content="async Task"
+                Click="Method2Btn_Click"
+                />
+        <TextBox x:Name="Method3Log"
+                   TextWrapping="Wrap"
+                   Grid.Row="1" Grid.Column="2"/>
+        <Button x:Name="Method3Btn"
+                Grid.Row="2" Grid.Column="2"
+                Content="async Task ConfigureAwait False"
+                Click="Method3Btn_Click"
+                />
+        <TextBox x:Name="Method4Log"
+                   TextWrapping="Wrap"
+                   Grid.Row="1" Grid.Column="3"/>
+        <Button x:Name="Method4Btn"
+                Grid.Row="2" Grid.Column="3"
+                Content="async Task (No await)"
+                Click="Method4Btn_Click"
+                />
+        <TextBox x:Name="Method5Log"
+                   TextWrapping="Wrap"
+                   Grid.Row="1" Grid.Column="4"/>
+        <Button x:Name="Method5Btn"
+                Grid.Row="2" Grid.Column="4"
+                Content="(sync) void"
+                Click="Method5Btn_Click"
+                />
+    </Grid>
+</Window>
