@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualResetEventDemo", "ManualResetEventDemo\ManualResetEventDemo.csproj", "{56E6B46E-A6AF-48E8-940B-CDBE09F9968D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56E6B46E-A6AF-48E8-940B-CDBE09F9968D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E6B46E-A6AF-48E8-940B-CDBE09F9968D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E6B46E-A6AF-48E8-940B-CDBE09F9968D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E6B46E-A6AF-48E8-940B-CDBE09F9968D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {264E2575-9CEE-4EC3-BF90-D45925578376}
+	EndGlobalSection
+EndGlobal
