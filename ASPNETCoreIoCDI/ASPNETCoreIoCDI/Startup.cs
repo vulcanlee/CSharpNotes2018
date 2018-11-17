@@ -30,6 +30,7 @@ namespace ASPNETCoreIoCDI
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddScoped<IDefaultDependency, MyDefaultClass1>();
+            services.AddTransient<IMyDependency, MyClass2>();
 
             Unity.Microsoft.DependencyInjection.ServiceProvider serviceProvider =
                 Unity.Microsoft.DependencyInjection.ServiceProvider.ConfigureServices(services)
@@ -43,7 +44,6 @@ namespace ASPNETCoreIoCDI
         {
             // Could be used to register more types
             container.RegisterType<IMyDependency, MyClass1>("MyClass1");
-            container.RegisterType<IMyDependency, MyClass2>();
             //container.RegisterType<IMyDependency, MyClass2>(new Unity.Lifetime.SynchronizedLifetimeManager());
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

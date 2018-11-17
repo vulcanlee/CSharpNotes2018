@@ -33,7 +33,7 @@ namespace ASPNETCoreIoCDI.Controllers
             this.container = container;
             this.defaultDependency1 = defaultDependency1;
             this.defaultDependency1.InstanceFrom = "控制器的建構式注入";
-            this.myDependency1.InstanceName = "myDependency1";
+            this.defaultDependency1.InstanceName = "defaultDependency1";
             this.defaultDependency2 = defaultDependency2;
             this.defaultDependency2.InstanceFrom = "控制器的建構式注入";
             this.defaultDependency2.InstanceName = "defaultDependency2";
@@ -64,9 +64,12 @@ namespace ASPNETCoreIoCDI.Controllers
             IMyDependency myDependency8 = Startup.Container.Resolve<IMyDependency>("MyClass1");
             myDependency8.InstanceFrom = "由 Startup 靜態屬性 Container 取得 IUnityContainer 進而手動解析(具名解析，指定 MyClass1)";
             myDependency8.InstanceName = "myDependency8";
+            IMyDependency myDependency9 = Startup.Container.Resolve<IMyDependency>("MyClass1");
+            myDependency9.InstanceFrom = "再一次，由 Startup 靜態屬性 Container 取得 IUnityContainer 進而手動解析(具名解析，指定 MyClass1)";
+            myDependency9.InstanceName = "myDependency9";
 
             return new object[] { myDependency1, myDependency2, myDependency3, myDependency4,
-            myDependency5, myDependency6, myDependency7, myDependency8,defaultDependency1,defaultDependency2};
+            myDependency5, myDependency6, myDependency7, myDependency8, myDependency9,defaultDependency1,defaultDependency2};
         }
 
         // GET api/values/5
