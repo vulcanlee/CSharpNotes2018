@@ -1,0 +1,52 @@
+﻿@page "/ElementVisibility"
+
+<h1>HTML Element 動態顯示或者隱藏的控制練習</h1>
+
+<p>練習步驟</p>
+<p>建立一個名為 EleVisible 的 Razor 檢視檔案</p>
+<p>使用 ShowAction 字串變數來控制 style display 的值</p>
+<p>綁定按鈕事件，動態的切換 ShowAction 字串內容，造成 HTML 項目可以動態的顯示或者隱藏</p>
+<p>修正 NavMenu 元件 Component，使其可以顯示這個 Blazor 元件在網頁上</p>
+
+<hr />
+
+<div style="display: @ShowAction">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+</div>
+
+<hr />
+
+<button class="btn btn-primary" onclick="@IncrementCount">切換顯示狀態</button>
+
+<hr />
+
+<div>ShowAction = @ShowAction</div>
+
+@functions {
+bool IsShow = true;
+string ShowAction = "";
+void IncrementCount()
+{
+    IsShow = !IsShow;
+    ChangeShowMode();
+}
+
+void ChangeShowMode()
+{
+    if (IsShow == true)
+    {
+        ShowAction = "";
+    }
+    else
+    {
+        ShowAction = "none";
+    }
+}
+}
