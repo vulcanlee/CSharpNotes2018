@@ -23,7 +23,7 @@
 
 <hr />
 
-<button class="btn btn-primary" onclick="@IncrementCount">切換顯示狀態</button>
+<button class="btn btn-primary" onclick="@ChangeStatus">切換顯示狀態</button>
 
 <hr />
 
@@ -32,7 +32,7 @@
 @functions {
 bool IsShow = true;
 string ShowAction = "";
-void IncrementCount()
+void ChangeStatus()
 {
     IsShow = !IsShow;
     ChangeShowMode();
