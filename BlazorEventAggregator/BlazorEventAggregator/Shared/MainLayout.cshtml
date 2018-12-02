@@ -1,0 +1,55 @@
+@inherits BlazorLayoutComponent
+@using Prism.Events
+@using BlazorEventAggregator.Models
+@inject IEventAggregator eventAggregator
+
+<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-8">
+        <button class="btn btn-primary @ShowLogin">Login</button>
+        <button class="btn btn-warning @ShowLogout">Logout</button>
+        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+@functions
+{
+    string ShowLogin = "";
+    string ShowLogout = "collapse";
+
+    protected override void OnInit()
+    {
+        eventAggregator.GetEvent<ShowLoginEvent>().Subscribe(x =>
+        {
+            if (x.IsShow == true)
+            {
+                ShowLogin = "";
+            }
+            else
+            {
+                ShowLogin = "collapse";
+            }
+            base.StateHasChanged();
+        });
+
+        eventAggregator.GetEvent<ShowLogoutEvent>().Subscribe(x =>
+        {
+            if (x.IsShow == true)
+            {
+                ShowLogout = "";
+            }
+            else
+            {
+                ShowLogout = "collapse";
+            }
+        });
+        base.StateHasChanged();
+    }
+}

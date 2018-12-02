@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEventAggregator", "BlazorEventAggregator\BlazorEventAggregator.csproj", "{4E67CB22-7008-4F13-9378-0AACDAE0D25E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAggreators", "EventAggreators\EventAggreators.csproj", "{C667AF94-AD4C-4292-AA7A-6B95E593523E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E67CB22-7008-4F13-9378-0AACDAE0D25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E67CB22-7008-4F13-9378-0AACDAE0D25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E67CB22-7008-4F13-9378-0AACDAE0D25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E67CB22-7008-4F13-9378-0AACDAE0D25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C667AF94-AD4C-4292-AA7A-6B95E593523E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C667AF94-AD4C-4292-AA7A-6B95E593523E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C667AF94-AD4C-4292-AA7A-6B95E593523E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C667AF94-AD4C-4292-AA7A-6B95E593523E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A66D11B8-31FE-49DE-A5CB-6E5789CB2E21}
+	EndGlobalSection
+EndGlobal
