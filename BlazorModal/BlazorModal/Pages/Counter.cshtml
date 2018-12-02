@@ -1,0 +1,92 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" onclick="@IncrementCount">Click me</button>
+
+<p>刪除選擇：@DeleteResult</p>
+
+@if (ShowDialog)
+{
+    <div class="modal " tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">刪除員工資料</h3>
+                </div>
+                <div class="modal-body">
+                    <h4>你確定要刪除這筆員工資料嗎 ??</h4>
+                    <table class="table">
+                        <tr>
+                            <td>姓名</td>
+                            <td>@emp.Name</td>
+                        </tr>
+                        <tr>
+                            <td>性別</td>
+                            <td>@emp.Gender</td>
+                        </tr>
+                        <tr>
+                            <td>部門</td>
+                            <td>@emp.Department</td>
+                        </tr>
+                        <tr>
+                            <td>城市</td>
+                            <td>@emp.City</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" onclick="@CloseModalYes">是</button>
+                    <button class="btn btn-warning" onclick="@CloseModalNo">否</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@functions {
+    int currentCount = 0;
+    bool ShowDialog = false;
+    string DeleteResult = "";
+
+    public class Empolyee
+    {
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public string Department { get; set; }
+        public string City { get; set; }
+    }
+    Empolyee emp = new Empolyee()
+    {
+        Name = "Vulcan Lee",
+        Gender = "M",
+        City = "Kaohsiung",
+        Department = "IT"
+    };
+
+    void IncrementCount()
+    {
+        currentCount++;
+        DeleteResult = "";
+
+        if (currentCount % 2 == 1)
+        {
+            ShowDialog = true;
+        }
+    }
+
+    void CloseModalYes()
+    {
+        ShowDialog = false;
+        DeleteResult = "是的，刪除這筆員工資料";
+    }
+
+    void CloseModalNo()
+    {
+        ShowDialog = false;
+        DeleteResult = "不，放棄刪除這筆員工資料";
+    }
+}
