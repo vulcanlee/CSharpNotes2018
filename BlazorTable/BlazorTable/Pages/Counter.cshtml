@@ -1,0 +1,52 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" onclick="@IncrementCount">Click me</button>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-primary">
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>mdo</td>
+        </tr>
+        <tr>
+            <th scope="row" class="bg-primary">2</th>
+            <td class="table-secondary">Jacob</td>
+            <td class="table-success text-center">Thornton</td>
+            <td class="table-danger" onclick=@(() => OnCellClicked("Parameter1"))>fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>twitter</td>
+        </tr>
+    </tbody>
+</table>
+
+@functions {
+    int currentCount = 0;
+
+    void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    void OnCellClicked(string para)
+    {
+        para = "" + para;
+        Console.WriteLine($"...............Debut");
+    }
+}
